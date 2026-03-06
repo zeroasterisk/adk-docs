@@ -3,6 +3,8 @@ hide:
   - toc
   - navigation
 ---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>document.body.classList.add('adk-landing-page');</script>
@@ -14,7 +16,31 @@ hide:
   body.adk-landing-page .md-content { max-width: none !important; margin: 0 !important; flex-grow: 1 !important; }
   body.adk-landing-page .md-content__inner { max-width: 1280px !important; margin: 0 auto !important; padding: 0 clamp(16px, 4vw, 48px) !important; box-sizing: border-box !important; overflow-x: hidden !important; }
   body.adk-landing-page .md-footer { display: none !important; }
-  body.adk-landing-page .md-header__inner { max-width: 100% !important; overflow-x: hidden !important; }
+  body.adk-landing-page .md-header__inner { max-width: 100% !important; overflow-x: hidden !important; padding-right: 20px !important; }
+  /* Responsive header repo links — full text → icons only (≤1200px) → hidden (≤900px) */
+  .md-header__title { flex-shrink: 1 !important; min-width: 120px !important; overflow: hidden !important; }
+  .md-header__source { flex-shrink: 0 !important; display: flex !important; gap: 2px !important; flex-wrap: nowrap !important; max-width: none !important; width: auto !important; }
+  body.adk-landing-page .md-header__inner { padding-right: 12px !important; }
+  .md-header .md-source { min-width: auto !important; width: auto !important; margin-right: 2px !important; }
+  .md-header .md-source__repository { font-size: 0.65rem; white-space: nowrap; }
+  .md-header .md-source__icon svg { width: 1rem !important; height: 1rem !important; }
+  @media (max-width: 1200px) {
+    .md-header .md-source__repository { display: none !important; }
+    .md-header .md-source { margin-right: 4px !important; position: relative; }
+    .md-header .md-source::after {
+      content: ''; display: inline-block; width: 16px; height: 16px;
+      background-size: contain; background-repeat: no-repeat; background-position: center;
+      position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+    }
+    .md-header .md-source { padding-right: 22px !important; min-width: 0 !important; width: auto !important; }
+    .md-header .md-source[href*="adk-python"]::after { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg'); }
+    .md-header .md-source[href*="adk-js"]::after { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg'); }
+    .md-header .md-source[href*="adk-go"]::after { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg'); }
+    .md-header .md-source[href*="adk-java"]::after { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg'); }
+  }
+  @media (max-width: 900px) {
+    .md-header .md-source { display: none !important; }
+  }
 </style>
 
 <div class="adk-landing">
@@ -27,8 +53,8 @@ hide:
 <!-- Hero Section -->
 <div class="hero-grid">
   <div class="hero-content">
-    <h1>Build AI Agents.<br>Open &amp; Scalable.</h1>
-    <p>Start quickly, evolve your designs, and scale up to enterprise-level deployments. Model-agnostic, deployment-agnostic, and fully open source.</p>
+    <h1>SOTA Production AI Agents, <span class="hero-dim">not Prototypes.</span></h1>
+    <p>Start in seconds, stay in control while you hill climb, and scale up to enterprise-level deployments. Batteries included, any model, any tools, any deployment, opinionated but fully customizable, P0 Google code and <strong>fully open source</strong>.</p>
     <div class="hero-actions">
       <a href="get-started/quickstart/" class="btn btn-primary">Get Started</a>
     </div>
@@ -38,10 +64,10 @@ hide:
     <div class="tabbed-area" id="tabbed-area">
       <div class="mac-window">
         <div class="iterm-tab-bar">
-          <div class="iterm-tab active" data-lang="python"><span>🐍</span> Python</div>
-          <div class="iterm-tab" data-lang="go"><span>🐹</span> Go</div>
-          <div class="iterm-tab" data-lang="java"><span>☕</span> Java</div>
-          <div class="iterm-tab" data-lang="typescript"><span>🔷</span> TypeScript</div>
+          <div class="iterm-tab active" data-lang="python"><img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"> Python</div>
+          <div class="iterm-tab" data-lang="go"><img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Go"> Go</div>
+          <div class="iterm-tab" data-lang="java"><img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"> Java</div>
+          <div class="iterm-tab" data-lang="typescript"><img class="lang-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"> TypeScript</div>
         </div>
         <div class="code-content" id="code-python"><pre><span class="kw">from</span> google.adk <span class="kw">import</span> <span class="fn">Agent</span>
 <span class="kw">from</span> google.adk.tools <span class="kw">import</span> google_search
@@ -236,36 +262,52 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
 <div class="ceiling-section">
   <h2>Low floor, high ceiling</h2>
   <p class="section-subtitle">Start simple. Scale to production. ADK grows with you.</p>
-  <div class="carousel-track">
-    <div class="carousel-card">
-      <span class="card-icon">🧩</span>
-      <h3>Structured Context</h3>
-      <p>Compiled view of structured context lets agents reason about complex state without losing track.</p>
-    </div>
-    <div class="carousel-card">
-      <span class="card-icon">🔌</span>
-      <h3>Plugins</h3>
-      <p>Plugins change the behavior of ADK at every level — customize auth, logging, tool resolution, and more.</p>
-    </div>
-    <div class="carousel-card">
-      <span class="card-icon">🔀</span>
-      <h3>Graph Workflows</h3>
-      <p>Need fine-grained control? Graph-based workflows give you deterministic execution paths with AI-powered nodes.</p>
-    </div>
-    <div class="carousel-card">
-      <span class="card-icon">🏗️</span>
-      <h3>Battle-tested at Scale</h3>
-      <p>Google-backed with thousands of agents in production. This isn't a weekend project.</p>
-    </div>
-    <div class="carousel-card">
-      <span class="card-icon">🌐</span>
-      <h3>Any Model, Any Runtime</h3>
-      <p>Any model, any runtime, any tools, any interface. Zero lock-in by design.</p>
-    </div>
-    <div class="carousel-card">
-      <span class="card-icon">💎</span>
-      <h3>Built for Gemini &amp; Google Cloud</h3>
-      <p>While model-agnostic, ADK is optimized for Gemini models and Google Cloud deployment with first-class integrations.</p>
+  <div id="features-carousel" class="splide" aria-label="Key features">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <a class="carousel-card" href="context/">
+            <span class="card-icon">🧩</span>
+            <h3>Structured Context</h3>
+            <p>Compiled view of structured context lets agents reason about complex state without losing track.</p>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="callbacks/">
+            <span class="card-icon">🔌</span>
+            <h3>Callbacks &amp; Plugins</h3>
+            <p>Callbacks change the behavior of ADK at every level — customize auth, logging, tool resolution, and more.</p>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="agents/workflow-agents/">
+            <span class="card-icon">🔀</span>
+            <h3>Graph Workflows</h3>
+            <p>Need fine-grained control? Graph-based workflows give you deterministic execution paths with AI-powered nodes.</p>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="deploy/">
+            <span class="card-icon">🏗️</span>
+            <h3>Battle-tested at Scale</h3>
+            <p>Google-backed with thousands of agents in production. This isn't a weekend project.</p>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="agents/models/">
+            <span class="card-icon">🌐</span>
+            <h3>Any Model, Any Runtime</h3>
+            <p>Any model, any runtime, any tools, any interface. Zero lock-in by design.</p>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="deploy/agent-engine/">
+            <span class="card-icon">💎</span>
+            <h3>Built for Gemini &amp; Google Cloud</h3>
+            <p>While model-agnostic, ADK is optimized for Gemini models and Google Cloud deployment with first-class integrations.</p>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -289,6 +331,25 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   });
+
+  // Splide carousel
+  if (typeof Splide !== 'undefined') {
+    new Splide('#features-carousel', {
+      type: 'loop',
+      perPage: 3,
+      perMove: 1,
+      focus: 'center',
+      gap: '1.25rem',
+      padding: '2rem',
+      autoplay: false,
+      pagination: true,
+      arrows: true,
+      breakpoints: {
+        1024: { perPage: 2, padding: '1rem' },
+        640: { perPage: 1, padding: '2rem' }
+      }
+    }).mount();
+  }
 
   // Terminal animation
   var term = document.getElementById('anim-term');
