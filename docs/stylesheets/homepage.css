@@ -521,3 +521,13 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
   .md-typeset .adk-landing .feature-split,
   .md-typeset .adk-landing .feature-split.reverse { grid-template-columns: 1fr !important; }
 }
+
+/* Asciinema player styling */
+.md-typeset .adk-landing #asciinema-demo {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.md-typeset .adk-landing #asciinema-demo .ap-player {
+  border-radius: 12px;
+}

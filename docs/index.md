@@ -5,6 +5,8 @@ hide:
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.9.0/dist/bundle/asciinema-player.css" />
+<script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.9.0/dist/bundle/asciinema-player.min.js"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>document.body.classList.add('adk-landing-page');</script>
@@ -164,19 +166,7 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
     <p>Define your skills, bind your tools, and let your IDE do the heavy lifting.</p>
   </div>
   <div class="feature-visual">
-    <div class="mac-window terminal">
-      <div class="window-header">
-        <div class="window-dots">
-          <span class="window-dot red"></span>
-          <span class="window-dot yellow"></span>
-          <span class="window-dot green"></span>
-        </div>
-        <div class="window-title">bash — claude</div>
-      </div>
-      <div class="terminal-body" id="anim-term">
-        <p style="color:var(--landing-muted); font-style:italic;"><!-- Placeholder: asciinema recording --></p>
-      </div>
-    </div>
+    <div id="asciinema-demo"></div>
   </div>
 </div>
 
@@ -351,42 +341,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }).mount();
   }
 
-  // Terminal animation
-  var term = document.getElementById('anim-term');
-  if (!term) return;
-  term.innerHTML = '';
-  var steps = [
-    {type:'input', text:"claude 'Build me a weather agent with ADK'", delay:500},
-    {type:'spinner', text:"Using ADK skill + MCP server...", delay:800},
-    {type:'system', text:"Read Google ADK documentation via MCP...\nAnalyzed tool schemas...", delay:1500},
-    {type:'code', text:"from google.adk import Agent\nfrom tools import get_weather\n\nagent = Agent(\n    name=\"weather_bot\",\n    model=\"gemini-2.5-flash\",\n    tools=[get_weather],\n    instruction=\"You provide weather updates.\"\n)", delay:1000},
-    {type:'success', text:"✓ Agent created with tool bindings", delay:500}
-  ];
-  var time = 0;
-  steps.forEach(function(step) {
-    time += step.delay;
-    setTimeout(function() {
-      var line = document.createElement('div');
-      line.className = 'term-line';
-      line.style.opacity = '1';
-      if (step.type === 'input') {
-        line.innerHTML = '<span class="term-prompt">$</span><span class="term-cmd">' + step.text + '</span>';
-      } else if (step.type === 'spinner') {
-        line.className = 'term-line spinner-line';
-        line.innerHTML = '<span class="term-spinner">⠋</span><span class="term-system">' + step.text + '</span>';
-      } else if (step.type === 'system') {
-        var sl = term.querySelector('.spinner-line');
-        if (sl) { var sp = sl.querySelector('.term-spinner'); sp.textContent='✓'; sp.style.animation='none'; sp.style.color='#10b981'; }
-        line.innerHTML = '<span class="term-system">' + step.text.replace(/\n/g,'<br>') + '</span>';
-      } else if (step.type === 'code') {
-        line.className = 'term-line term-code-block';
-        line.innerHTML = '<pre><code>' + step.text + '</code></pre>';
-      } else if (step.type === 'success') {
-        line.innerHTML = '<span class="term-success">' + step.text + '</span>';
-      }
-      term.appendChild(line);
-      term.scrollTop = term.scrollHeight;
-    }, time);
-  });
+  // Asciinema player
+  var playerEl = document.getElementById('asciinema-demo');
+  if (playerEl && typeof AsciinemaPlayer !== 'undefined') {
+    AsciinemaPlayer.create('assets/adk-demo.cast', playerEl, {
+      theme: 'monokai',
+      fit: 'width',
+      autoPlay: true,
+      loop: true,
+      speed: 1,
+      idleTimeLimit: 2,
+      cols: 85,
+      rows: 24,
+      poster: 'npt:0:18'
+    });
+  }
 });
 </script>
