@@ -4,233 +4,328 @@ hide:
   - navigation
 ---
 
-<div class="landing-page">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.body.classList.add('adk-landing-page');</script>
+<style>
+  body.adk-landing-page { overflow-x: hidden !important; }
+  body.adk-landing-page .md-grid { max-width: 100% !important; width: 100% !important; }
+  body.adk-landing-page .md-sidebar { display: none !important; }
+  body.adk-landing-page .md-main__inner { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  body.adk-landing-page .md-content { max-width: none !important; margin: 0 !important; flex-grow: 1 !important; }
+  body.adk-landing-page .md-content__inner { max-width: 1280px !important; margin: 0 auto !important; padding: 0 clamp(16px, 4vw, 48px) !important; box-sizing: border-box !important; overflow-x: hidden !important; }
+  body.adk-landing-page .md-footer { display: none !important; }
+  body.adk-landing-page .md-header__inner { max-width: 100% !important; overflow-x: hidden !important; }
+</style>
 
-  <!-- Hero Section -->
-  <div class="lp-hero">
-    <div class="lp-hero-content">
-      <div class="lp-hero-logo">
-        <img src="assets/agent-development-kit.png" alt="ADK Logo" width="80">
+<div class="adk-landing">
+
+<!-- Ambient Glows -->
+<div class="glow glow-tl"></div>
+<div class="glow glow-tr"></div>
+<div class="glow glow-mr"></div>
+
+<!-- Hero Section -->
+<div class="hero-grid">
+  <div class="hero-content">
+    <h1>Build AI Agents.<br>Open &amp; Scalable.</h1>
+    <p>Start quickly, evolve your designs, and scale up to enterprise-level deployments. Model-agnostic, deployment-agnostic, and fully open source.</p>
+    <div class="hero-actions">
+      <a href="get-started/quickstart/" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <!-- Tabbed Code Window -->
+    <div class="tabbed-area" id="tabbed-area">
+      <div class="mac-window">
+        <div class="iterm-tab-bar">
+          <div class="iterm-tab active" data-lang="python"><span>🐍</span> Python</div>
+          <div class="iterm-tab" data-lang="go"><span>🐹</span> Go</div>
+          <div class="iterm-tab" data-lang="java"><span>☕</span> Java</div>
+          <div class="iterm-tab" data-lang="typescript"><span>🔷</span> TypeScript</div>
+        </div>
+        <div class="code-content" id="code-python"><pre><span class="kw">from</span> google.adk <span class="kw">import</span> <span class="fn">Agent</span>
+<span class="kw">from</span> google.adk.tools <span class="kw">import</span> google_search
+
+agent = <span class="fn">Agent</span>(
+    name=<span class="str">"researcher"</span>,
+    model=<span class="str">"gemini-2.5-flash"</span>,
+    instruction=<span class="str">"You help users research topics thoroughly."</span>,
+    tools=[google_search],
+)</pre></div>
+        <div class="code-content" id="code-go" style="display:none"><pre><span class="kw">import</span> <span class="str">"google.golang.org/adk/agent"</span>
+
+a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
+    agent.<span class="fn">WithModel</span>(<span class="str">"gemini-2.5-flash"</span>),
+    agent.<span class="fn">WithInstruction</span>(<span class="str">"You help users research topics thoroughly."</span>),
+    agent.<span class="fn">WithTools</span>(googleSearch),
+)</pre></div>
+        <div class="code-content" id="code-java" style="display:none"><pre><span class="kw">import</span> com.google.adk.agents.<span class="fn">LlmAgent</span>;
+<span class="kw">import</span> com.google.adk.tools.<span class="fn">GoogleSearchTool</span>;
+
+<span class="fn">LlmAgent</span> agent = <span class="fn">LlmAgent</span>.builder()
+    .name(<span class="str">"researcher"</span>)
+    .model(<span class="str">"gemini-2.5-flash"</span>)
+    .instruction(<span class="str">"You help users research topics thoroughly."</span>)
+    .tools(<span class="fn">GoogleSearchTool</span>.create())
+    .build();</pre></div>
+        <div class="code-content" id="code-typescript" style="display:none"><pre><span class="kw">import</span> { <span class="fn">Agent</span> } <span class="kw">from</span> <span class="str">'@google/adk'</span>;
+<span class="kw">import</span> { googleSearch } <span class="kw">from</span> <span class="str">'@google/adk/tools'</span>;
+
+<span class="kw">const</span> agent = <span class="kw">new</span> <span class="fn">Agent</span>({
+  name: <span class="str">'researcher'</span>,
+  model: <span class="str">'gemini-2.5-flash'</span>,
+  instruction: <span class="str">'You help users research topics thoroughly.'</span>,
+  tools: [googleSearch],
+});</pre></div>
       </div>
-      <h1 class="lp-hero-title">Agent Development Kit</h1>
-      <p class="lp-hero-tagline">Start quickly, evolve your designs, and scale up to enterprise-level deployments.</p>
-      <p class="lp-hero-description">
-        ADK is a flexible, modular framework for developing and deploying AI agents.
-        Model-agnostic. Deployment-agnostic. Open source.
-      </p>
-      <div class="lp-hero-actions">
-        <a href="get-started/quickstart/" class="lp-btn lp-btn-primary">Get started</a>
-        <a href="https://github.com/google/adk-python" class="lp-btn lp-btn-secondary" target="_blank">GitHub</a>
+      <!-- Install info synced with tabs -->
+      <div class="install-info" id="install-python">
+        <div class="install-cmd"><code>pip install google-adk</code></div>
+        <div class="install-badges">
+          <span class="badge badge-version">v1.26.0</span>
+          <span class="badge badge-stars">⭐ 18,189</span>
+          <span class="badge badge-downloads">📦 3.7M+/mo</span>
+        </div>
+        <a href="https://github.com/google/adk-python" class="github-link" target="_blank">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          adk-python
+        </a>
+      </div>
+      <div class="install-info" id="install-go" style="display:none">
+        <div class="install-cmd"><code>go get google.golang.org/adk</code></div>
+        <div class="install-badges">
+          <span class="badge badge-version">v0.5.0</span>
+          <span class="badge badge-stars">⭐ 7,088</span>
+        </div>
+        <a href="https://github.com/google/adk-go" class="github-link" target="_blank">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          adk-go
+        </a>
+      </div>
+      <div class="install-info" id="install-java" style="display:none">
+        <div class="install-cmd"><code>com.google.adk:google-adk:0.2.0</code></div>
+        <div class="install-badges">
+          <span class="badge badge-version">v0.2.0</span>
+          <span class="badge badge-stars">⭐ 1,327</span>
+        </div>
+        <a href="https://github.com/google/adk-java" class="github-link" target="_blank">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          adk-java
+        </a>
+      </div>
+      <div class="install-info" id="install-typescript" style="display:none">
+        <div class="install-cmd"><code>npm install @google/adk</code></div>
+        <div class="install-badges">
+          <span class="badge badge-version">v0.4.0</span>
+          <span class="badge badge-stars">⭐ 868</span>
+          <span class="badge badge-downloads">📦 95K+/mo</span>
+        </div>
+        <a href="https://github.com/google/adk-js" class="github-link" target="_blank">
+          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          adk-js
+        </a>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Install Section -->
-  <div class="lp-install">
-    <div class="lp-install-grid">
-      <div class="lp-install-card">
-        <div class="lp-install-lang">🐍 Python</div>
-        <code>pip install google-adk</code>
+<!-- Developer Tools -->
+<div class="feature-split">
+  <div class="feature-text">
+    <span class="feature-badge">Developer Tools</span>
+    <h2>Build agents <i>with</i> agents.</h2>
+    <p>ADK is designed to be written by both humans and AI. Hook up your favorite coding assistant to our MCP Server and let it generate robust, tool-bound agents in seconds.</p>
+    <p>Define your skills, bind your tools, and let your IDE do the heavy lifting.</p>
+  </div>
+  <div class="feature-visual">
+    <div class="mac-window terminal">
+      <div class="window-header">
+        <div class="window-dots">
+          <span class="window-dot red"></span>
+          <span class="window-dot yellow"></span>
+          <span class="window-dot green"></span>
+        </div>
+        <div class="window-title">bash — claude</div>
       </div>
-      <div class="lp-install-card">
-        <div class="lp-install-lang">☕ Java</div>
-        <code>com.google.adk:google-adk:0.6.0</code>
-      </div>
-      <div class="lp-install-card">
-        <div class="lp-install-lang">🔷 TypeScript</div>
-        <code>npm install @google/adk</code>
-      </div>
-      <div class="lp-install-card">
-        <div class="lp-install-lang">🐹 Go</div>
-        <code>go get google.golang.org/adk</code>
+      <div class="terminal-body" id="anim-term">
+        <p style="color:var(--landing-muted); font-style:italic;"><!-- Placeholder: asciinema recording --></p>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Open Source, Any Model -->
-  <div class="lp-section">
-    <h2 class="lp-section-title">Open source. Any model. Any cloud.</h2>
-    <p class="lp-section-subtitle">
-      Build your agents with AI models that work for you, and run them on the best infrastructure for your needs.
-    </p>
-    <div class="lp-features-grid">
-      <div class="lp-feature-card">
-        <div class="lp-feature-icon">🧠</div>
-        <h3>Model-agnostic</h3>
-        <p>Optimized for Gemini, but works with any LLM. Swap models without rewriting your agent logic.</p>
+<!-- Dev UI Section -->
+<div class="feature-split reverse">
+  <div class="feature-text">
+    <span class="feature-badge">Observability</span>
+    <h2>Visual Debugging &amp; Tracing</h2>
+    <p>Stop printing to stdout. ADK includes a powerful interactive web UI for testing, debugging, and tracing agent behavior locally.</p>
+    <p>Inspect tool calls, modify context windows on the fly, and visualize multi-agent graph executions with zero configuration.</p>
+  </div>
+  <div class="feature-visual">
+    <div class="ui-wrapper">
+      <img src="assets/adk-web-dev-ui-chat.png" alt="ADK Web Dev UI" class="devui-img">
+    </div>
+  </div>
+</div>
+
+<!-- Eval Section -->
+<div class="feature-split">
+  <div class="feature-text">
+    <span class="feature-badge">Built-in Evaluation</span>
+    <h2>Go beyond vibes. Evaluate everything.</h2>
+    <p>Testing agents is notoriously hard. ADK's built-in evaluation framework lets you systematically test not just the final text response, but the <strong>entire execution trajectory</strong>.</p>
+    <p>Assert that specific tools were called, check the exact sequence of graph nodes, and ground outputs against real data.</p>
+  </div>
+  <div class="feature-visual">
+    <div class="eval-grid">
+      <div class="eval-card pass">
+        <div class="eval-title"><span>test_weather_trajectory</span><span class="eval-status pass">✓ PASS</span></div>
+        <div class="eval-desc">Verified tool sequence: [get_location → get_weather]</div>
       </div>
-      <div class="lp-feature-card">
-        <div class="lp-feature-icon">☁️</div>
-        <h3>Deployment-agnostic</h3>
-        <p>Run locally, on Google Cloud, or any infrastructure. Your agents, your choice.</p>
+      <div class="eval-card pass">
+        <div class="eval-title"><span>test_response_groundedness</span><span class="eval-status pass">✓ PASS</span></div>
+        <div class="eval-desc">Response perfectly matches tool output constraints.</div>
       </div>
-      <div class="lp-feature-card">
-        <div class="lp-feature-icon">🔓</div>
-        <h3>Open source</h3>
-        <p>Apache 2.0 licensed. Full transparency, community-driven development, no lock-in.</p>
+      <div class="eval-card fail">
+        <div class="eval-title"><span>test_prm_safety_filter</span><span class="eval-status fail">✗ FAIL</span></div>
+        <div class="eval-desc">Agent bypassed safety node in graph path.</div>
       </div>
-      <div class="lp-feature-card">
-        <div class="lp-feature-icon">🔗</div>
-        <h3>Framework-compatible</h3>
-        <p>Built for compatibility with LangChain, CrewAI, and other popular agent frameworks.</p>
+      <div class="eval-card pass">
+        <div class="eval-title"><span>test_latency_budget</span><span class="eval-status pass">✓ PASS</span></div>
+        <div class="eval-desc">Execution completed in 842ms (Budget: 1500ms).</div>
+      </div>
+    </div>
+
+    <!-- Metrics Chart -->
+    <div class="metrics-dashboard">
+      <div class="metrics-chart">
+        <div class="metrics-chart-label">Agent v2.1 vs v2.0 — Response Quality</div>
+        <svg viewBox="0 0 400 160" class="metrics-svg">
+          <line x1="40" y1="20" x2="40" y2="130" stroke-width="1"/>
+          <line x1="40" y1="130" x2="380" y2="130" stroke-width="1"/>
+          <line x1="40" y1="75" x2="380" y2="75" stroke-width="0.5" stroke-dasharray="4"/>
+          <line x1="40" y1="45" x2="380" y2="45" stroke-width="0.5" stroke-dasharray="4"/>
+          <polyline points="40,95 90,93 140,96 190,94 240,95 290,93 340,94 380,95" fill="none" stroke="#6b7280" stroke-width="2" opacity="0.7"/>
+          <polyline points="40,92 90,85 140,78 190,68 240,58 290,50 340,42 380,35" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
+          <polyline points="40,92 90,85 140,78 190,68 240,58 290,50 340,42 380,35 380,130 40,130" fill="url(#blueGrad)" opacity="0.15"/>
+          <defs><linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+          <text x="385" y="98" fill="#6b7280" font-size="10" font-family="Inter">v2.0</text>
+          <text x="385" y="38" fill="#3b82f6" font-size="10" font-family="Inter">v2.1</text>
+          <text x="40" y="148" fill="#71717a" font-size="9" font-family="Inter">Day 1</text>
+          <text x="360" y="148" fill="#71717a" font-size="9" font-family="Inter">Day 7</text>
+        </svg>
+      </div>
+      <div class="metrics-table-wrap">
+        <table class="metrics-table">
+          <thead><tr><th>Metric</th><th>v2.0</th><th>v2.1</th><th>Δ</th></tr></thead>
+          <tbody>
+            <tr class="metric-green"><td>Groundedness</td><td>76%</td><td>88%</td><td class="delta-green">+12%</td></tr>
+            <tr class="metric-green"><td>Latency p50</td><td>620ms</td><td>440ms</td><td class="delta-green">−180ms</td></tr>
+            <tr class="metric-green"><td>Tool accuracy</td><td>81%</td><td>89%</td><td class="delta-green">+8%</td></tr>
+            <tr class="metric-neutral"><td>Safety filter</td><td>99.2%</td><td>99.2%</td><td class="delta-neutral">+0%</td></tr>
+            <tr class="metric-red"><td>Hallucination rate</td><td>4.1%</td><td>6.1%</td><td class="delta-red">+2%</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Low Floor, High Ceiling -->
-  <div class="lp-section lp-section-alt">
-    <h2 class="lp-section-title">Low floor, high ceiling</h2>
-    <p class="lp-section-subtitle">
-      Start simple with prompt-based, single agents, and evolve into graph-based workflows with multiple, coordinated agents.
-    </p>
-    <div class="lp-progression">
-      <div class="lp-progression-step">
-        <div class="lp-progression-number">1</div>
-        <h3>Single Agent</h3>
-        <p>A prompt, a model, and tools. Get running in minutes.</p>
-      </div>
-      <div class="lp-progression-arrow">→</div>
-      <div class="lp-progression-step">
-        <div class="lp-progression-number">2</div>
-        <h3>Multi-Agent</h3>
-        <p>Compose agents that delegate to specialized sub-agents.</p>
-      </div>
-      <div class="lp-progression-arrow">→</div>
-      <div class="lp-progression-step">
-        <div class="lp-progression-number">3</div>
-        <h3>Workflow Graphs</h3>
-        <p>Deterministic control flow with AI-powered nodes.</p>
-      </div>
+<!-- Low Floor, High Ceiling Section -->
+<div class="ceiling-section">
+  <h2>Low floor, high ceiling</h2>
+  <p class="section-subtitle">Start simple. Scale to production. ADK grows with you.</p>
+  <div class="carousel-track">
+    <div class="carousel-card">
+      <span class="card-icon">🧩</span>
+      <h3>Structured Context</h3>
+      <p>Compiled view of structured context lets agents reason about complex state without losing track.</p>
+    </div>
+    <div class="carousel-card">
+      <span class="card-icon">🔌</span>
+      <h3>Plugins</h3>
+      <p>Plugins change the behavior of ADK at every level — customize auth, logging, tool resolution, and more.</p>
+    </div>
+    <div class="carousel-card">
+      <span class="card-icon">🔀</span>
+      <h3>Graph Workflows</h3>
+      <p>Need fine-grained control? Graph-based workflows give you deterministic execution paths with AI-powered nodes.</p>
+    </div>
+    <div class="carousel-card">
+      <span class="card-icon">🏗️</span>
+      <h3>Battle-tested at Scale</h3>
+      <p>Google-backed with thousands of agents in production. This isn't a weekend project.</p>
+    </div>
+    <div class="carousel-card">
+      <span class="card-icon">🌐</span>
+      <h3>Any Model, Any Runtime</h3>
+      <p>Any model, any runtime, any tools, any interface. Zero lock-in by design.</p>
+    </div>
+    <div class="carousel-card">
+      <span class="card-icon">💎</span>
+      <h3>Built for Gemini &amp; Google Cloud</h3>
+      <p>While model-agnostic, ADK is optimized for Gemini models and Google Cloud deployment with first-class integrations.</p>
     </div>
   </div>
-
-  <!-- ADK 2.0 Workflow Graphs -->
-  <div class="lp-section">
-    <h2 class="lp-section-title">✨ New in ADK 2.0: Workflow Graphs</h2>
-    <p class="lp-section-subtitle">
-      Define agents with language and logic. Graph-based agents let you combine AI-powered functionality with deterministic code for more reliable workflows.
-    </p>
-    <div class="lp-code-comparison">
-      <div class="lp-code-block">
-        <div class="lp-code-label">Simple Agent</div>
-
-```python
-from google.adk import Agent
-
-agent = Agent(
-    name="greeter",
-    model="gemini-2.0-flash",
-    instruction="You are a friendly greeter.",
-    tools=[get_weather],
-)
-```
+</div>
 
 </div>
-      <div class="lp-code-block">
-        <div class="lp-code-label">Graph-based Workflow</div>
 
-```python
-from google.adk import Agent, GraphAgent
+<script>
+// Tab switching logic
+document.addEventListener("DOMContentLoaded", function() {
+  var tabs = document.querySelectorAll('.iterm-tab');
+  var langs = ['python', 'go', 'java', 'typescript'];
 
-researcher = Agent(name="researcher", ...)
-writer = Agent(name="writer", ...)
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var lang = this.getAttribute('data-lang');
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+      langs.forEach(function(l) {
+        document.getElementById('code-' + l).style.display = l === lang ? 'block' : 'none';
+        document.getElementById('install-' + l).style.display = l === lang ? 'flex' : 'none';
+      });
+    });
+  });
 
-workflow = GraphAgent(name="pipeline")
-workflow.add_node(researcher)
-workflow.add_node(writer)
-workflow.add_edge("researcher", "writer")
-```
-
-</div>
-    </div>
-  </div>
-
-  <!-- Ecosystem -->
-  <div class="lp-section lp-section-alt">
-    <h2 class="lp-section-title">Rich ecosystem &amp; Google Cloud ready</h2>
-    <p class="lp-section-subtitle">
-      Take advantage of numerous pre-built integrations from Google and our partners to build fast, and scale up your deployments to enterprise scale with full support from Google Agent Platform.
-    </p>
-    <div class="lp-ecosystem-grid">
-      <div class="lp-ecosystem-card">
-        <h3>🔧 Built-in Tools</h3>
-        <p>Google Search, Code Execution, Vertex AI extensions, and more out of the box.</p>
-      </div>
-      <div class="lp-ecosystem-card">
-        <h3>🔌 MCP Support</h3>
-        <p>Connect to any Model Context Protocol server for extensible tool access.</p>
-      </div>
-      <div class="lp-ecosystem-card">
-        <h3>🤝 A2A Protocol</h3>
-        <p>Agent-to-Agent communication for cross-platform agent interoperability.</p>
-      </div>
-      <div class="lp-ecosystem-card">
-        <h3>🚀 Agent Engine</h3>
-        <p>Deploy to Google Cloud's managed Agent Engine for production-grade scaling.</p>
-      </div>
-      <div class="lp-ecosystem-card">
-        <h3>📊 Evaluation</h3>
-        <p>Built-in eval framework to test and iterate on your agents systematically.</p>
-      </div>
-      <div class="lp-ecosystem-card">
-        <h3>🖥️ Dev UI</h3>
-        <p>Interactive web UI for testing, debugging, and tracing agent behavior locally.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Community -->
-  <div class="lp-section">
-    <h2 class="lp-section-title">Join the community</h2>
-    <p class="lp-section-subtitle">ADK is open source and growing fast.</p>
-    <div class="lp-community-links">
-      <a href="https://github.com/google/adk-python" class="lp-community-card" target="_blank">
-        <h3>ADK Python</h3>
-        <p>Core Python SDK</p>
-      </a>
-      <a href="https://github.com/google/adk-typescript" class="lp-community-card" target="_blank">
-        <h3>ADK TypeScript</h3>
-        <p>TypeScript/JavaScript SDK</p>
-      </a>
-      <a href="https://github.com/google/adk-java" class="lp-community-card" target="_blank">
-        <h3>ADK Java</h3>
-        <p>Java SDK</p>
-      </a>
-      <a href="https://github.com/google/adk-go" class="lp-community-card" target="_blank">
-        <h3>ADK Go</h3>
-        <p>Go SDK</p>
-      </a>
-      <a href="https://github.com/google/adk-docs" class="lp-community-card" target="_blank">
-        <h3>Documentation</h3>
-        <p>Contribute to these docs</p>
-      </a>
-      <a href="community/" class="lp-community-card">
-        <h3>Community</h3>
-        <p>Resources, videos &amp; more</p>
-      </a>
-    </div>
-  </div>
-
-  <!-- Quick Links -->
-  <div class="lp-section lp-section-alt lp-quicklinks">
-    <div class="lp-quicklinks-grid">
-      <a href="get-started/quickstart/" class="lp-quicklink">
-        <strong>📖 Quickstart</strong>
-        <span>Build your first agent</span>
-      </a>
-      <a href="agents/" class="lp-quicklink">
-        <strong>🏗️ Agents</strong>
-        <span>Agent types &amp; patterns</span>
-      </a>
-      <a href="tools/" class="lp-quicklink">
-        <strong>🔧 Tools</strong>
-        <span>Tool catalog &amp; usage</span>
-      </a>
-      <a href="deploy/" class="lp-quicklink">
-        <strong>🚀 Deploy</strong>
-        <span>Production deployment</span>
-      </a>
-    </div>
-  </div>
-
-</div>
+  // Terminal animation
+  var term = document.getElementById('anim-term');
+  if (!term) return;
+  term.innerHTML = '';
+  var steps = [
+    {type:'input', text:"claude 'Build me a weather agent with ADK'", delay:500},
+    {type:'spinner', text:"Using ADK skill + MCP server...", delay:800},
+    {type:'system', text:"Read Google ADK documentation via MCP...\nAnalyzed tool schemas...", delay:1500},
+    {type:'code', text:"from google.adk import Agent\nfrom tools import get_weather\n\nagent = Agent(\n    name=\"weather_bot\",\n    model=\"gemini-2.5-flash\",\n    tools=[get_weather],\n    instruction=\"You provide weather updates.\"\n)", delay:1000},
+    {type:'success', text:"✓ Agent created with tool bindings", delay:500}
+  ];
+  var time = 0;
+  steps.forEach(function(step) {
+    time += step.delay;
+    setTimeout(function() {
+      var line = document.createElement('div');
+      line.className = 'term-line';
+      line.style.opacity = '1';
+      if (step.type === 'input') {
+        line.innerHTML = '<span class="term-prompt">$</span><span class="term-cmd">' + step.text + '</span>';
+      } else if (step.type === 'spinner') {
+        line.className = 'term-line spinner-line';
+        line.innerHTML = '<span class="term-spinner">⠋</span><span class="term-system">' + step.text + '</span>';
+      } else if (step.type === 'system') {
+        var sl = term.querySelector('.spinner-line');
+        if (sl) { var sp = sl.querySelector('.term-spinner'); sp.textContent='✓'; sp.style.animation='none'; sp.style.color='#10b981'; }
+        line.innerHTML = '<span class="term-system">' + step.text.replace(/\n/g,'<br>') + '</span>';
+      } else if (step.type === 'code') {
+        line.className = 'term-line term-code-block';
+        line.innerHTML = '<pre><code>' + step.text + '</code></pre>';
+      } else if (step.type === 'success') {
+        line.innerHTML = '<span class="term-success">' + step.text + '</span>';
+      }
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }, time);
+  });
+});
+</script>
