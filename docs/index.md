@@ -108,11 +108,14 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
       </div>
       <!-- Install info synced with tabs -->
       <div class="install-info" id="install-python">
-        <div class="install-cmd"><code>pip install google-adk</code></div>
+        <div class="install-cmd">
+          <code>pip install google-adk</code>
+          <button class="copy-btn" data-copy="pip install google-adk" title="Copy to clipboard">📋</button>
+        </div>
         <div class="install-badges">
-          <span class="badge badge-version">v1.26.0</span>
-          <span class="badge badge-stars">⭐ 18,189</span>
-          <span class="badge badge-downloads">📦 3.7M+/mo</span>
+          <a href="https://pypi.org/project/google-adk/" target="_blank"><img src="https://img.shields.io/pypi/v/google-adk?label=version" alt="PyPI version"></a>
+          <a href="https://github.com/google/adk-python" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-python?style=flat&label=stars" alt="GitHub stars"></a>
+          <a href="https://pypi.org/project/google-adk/" target="_blank"><img src="https://img.shields.io/pypi/dm/google-adk?label=downloads" alt="PyPI downloads"></a>
         </div>
         <a href="https://github.com/google/adk-python" class="github-link" target="_blank">
           <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -120,10 +123,13 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
         </a>
       </div>
       <div class="install-info" id="install-go" style="display:none">
-        <div class="install-cmd"><code>go get google.golang.org/adk</code></div>
+        <div class="install-cmd">
+          <code>go get google.golang.org/adk</code>
+          <button class="copy-btn" data-copy="go get google.golang.org/adk" title="Copy to clipboard">📋</button>
+        </div>
         <div class="install-badges">
-          <span class="badge badge-version">v0.5.0</span>
-          <span class="badge badge-stars">⭐ 7,088</span>
+          <a href="https://pkg.go.dev/google.golang.org/adk" target="_blank"><img src="https://pkg.go.dev/badge/google.golang.org/adk.svg" alt="Go Reference"></a>
+          <a href="https://github.com/google/adk-go" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-go?style=flat&label=stars" alt="GitHub stars"></a>
         </div>
         <a href="https://github.com/google/adk-go" class="github-link" target="_blank">
           <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -131,10 +137,13 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
         </a>
       </div>
       <div class="install-info" id="install-java" style="display:none">
-        <div class="install-cmd"><code>com.google.adk:google-adk:0.2.0</code></div>
+        <div class="install-cmd">
+          <code>com.google.adk:google-adk</code>
+          <button class="copy-btn" data-copy="com.google.adk:google-adk" title="Copy to clipboard">📋</button>
+        </div>
         <div class="install-badges">
-          <span class="badge badge-version">v0.2.0</span>
-          <span class="badge badge-stars">⭐ 1,327</span>
+          <a href="https://search.maven.org/artifact/com.google.adk/google-adk" target="_blank"><img src="https://img.shields.io/maven-central/v/com.google.adk/google-adk?label=version" alt="Maven Central version"></a>
+          <a href="https://github.com/google/adk-java" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-java?style=flat&label=stars" alt="GitHub stars"></a>
         </div>
         <a href="https://github.com/google/adk-java" class="github-link" target="_blank">
           <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -142,11 +151,14 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
         </a>
       </div>
       <div class="install-info" id="install-typescript" style="display:none">
-        <div class="install-cmd"><code>npm install @google/adk</code></div>
+        <div class="install-cmd">
+          <code>npm install @google/adk</code>
+          <button class="copy-btn" data-copy="npm install @google/adk" title="Copy to clipboard">📋</button>
+        </div>
         <div class="install-badges">
-          <span class="badge badge-version">v0.4.0</span>
-          <span class="badge badge-stars">⭐ 868</span>
-          <span class="badge badge-downloads">📦 95K+/mo</span>
+          <a href="https://www.npmjs.com/package/@google/adk" target="_blank"><img src="https://img.shields.io/npm/v/@google/adk?label=version" alt="npm version"></a>
+          <a href="https://github.com/google/adk-typescript" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-typescript?style=flat&label=stars" alt="GitHub stars"></a>
+          <a href="https://www.npmjs.com/package/@google/adk" target="_blank"><img src="https://img.shields.io/npm/dm/@google/adk?label=downloads" alt="npm downloads"></a>
         </div>
         <a href="https://github.com/google/adk-js" class="github-link" target="_blank">
           <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -340,6 +352,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }).mount();
   }
+
+  // Copy-to-clipboard buttons
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+    var text = btn.getAttribute('data-copy');
+    navigator.clipboard.writeText(text).then(function() {
+      var orig = btn.textContent;
+      btn.textContent = '✅';
+      setTimeout(function() { btn.textContent = orig; }, 1500);
+    });
+  });
 
   // Asciinema player
   var playerEl = document.getElementById('asciinema-demo');
