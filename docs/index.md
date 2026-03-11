@@ -268,45 +268,99 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
     <div class="splide__track">
       <ul class="splide__list">
         <li class="splide__slide">
-          <a class="carousel-card" href="context/">
-            <span class="card-icon">🧩</span>
-            <h3>Structured Context</h3>
-            <p>Compiled view of structured context lets agents reason about complex state without losing track.</p>
+          <a class="carousel-card" href="get-started/quickstart/">
+            <span class="card-icon">🚀</span>
+            <h3>5-Minute Agent</h3>
+            <p>Zero to agent in 5 minutes. Define behavior in YAML or Python — no boilerplate required.</p>
+            <span class="card-learn-more">Learn more →</span>
           </a>
         </li>
         <li class="splide__slide">
-          <a class="carousel-card" href="callbacks/">
+          <a class="carousel-card" href="context/">
+            <span class="card-icon">🧠</span>
+            <h3>Structured Context</h3>
+            <p>Context engineering, not prompt engineering. Sessions, memory, and artifacts compiled into optimized model views.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="streaming/">
+            <span class="card-icon">🎙️</span>
+            <h3>Multimodal Streaming</h3>
+            <p>Voice, video, and real-time streaming. Build agents that see, hear, and respond in real time with the Live API.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="tools/mcp-tools/">
             <span class="card-icon">🔌</span>
-            <h3>Callbacks &amp; Plugins</h3>
-            <p>Callbacks change the behavior of ADK at every level — customize auth, logging, tool resolution, and more.</p>
+            <h3>MCP Native</h3>
+            <p>Connect 1000s of tools with zero config. Native Model Context Protocol support for extensible tool access.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="https://google.github.io/A2A/">
+            <span class="card-icon">🤝</span>
+            <h3>A2A Protocol</h3>
+            <p>Agents talking to agents. Cross-platform interoperability with the open Agent-to-Agent protocol.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="https://a2ui.org/">
+            <span class="card-icon">🖼️</span>
+            <h3>Agent-to-UI</h3>
+            <p>Agents that render, not just respond. Stream dynamic, generative UIs as structured payloads.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="safety/">
+            <span class="card-icon">🛡️</span>
+            <h3>Built-in Guardrails</h3>
+            <p>Safety by default. Input/output guardrails, content filtering, and callback-based safety checks.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="evaluate/">
+            <span class="card-icon">📊</span>
+            <h3>Evaluation Framework</h3>
+            <p>Go beyond vibes. Test response quality, tool accuracy, and full execution trajectories systematically.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="observability/">
+            <span class="card-icon">🔍</span>
+            <h3>Native Observability</h3>
+            <p>Full visibility into every agent decision. OpenTelemetry tracing, tool call inspection, and reasoning logs.</p>
+            <span class="card-learn-more">Learn more →</span>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a class="carousel-card" href="sessions/">
+            <span class="card-icon">🔄</span>
+            <h3>Session Rewind</h3>
+            <p>Time-travel debugging for agents. Replay and inspect any point in a conversation's history.</p>
+            <span class="card-learn-more">Learn more →</span>
           </a>
         </li>
         <li class="splide__slide">
           <a class="carousel-card" href="agents/workflow-agents/">
-            <span class="card-icon">🔀</span>
-            <h3>Graph Workflows</h3>
-            <p>Need fine-grained control? Graph-based workflows give you deterministic execution paths with AI-powered nodes.</p>
+            <span class="card-icon">📐</span>
+            <h3>Workflow Graphs</h3>
+            <p>Deterministic when you need it. Graph-based agents combine AI flexibility with reliable control flow.</p>
+            <span class="card-learn-more">Learn more →</span>
           </a>
         </li>
         <li class="splide__slide">
           <a class="carousel-card" href="deploy/">
-            <span class="card-icon">🏗️</span>
-            <h3>Battle-tested at Scale</h3>
-            <p>Google-backed with thousands of agents in production. This isn't a weekend project.</p>
-          </a>
-        </li>
-        <li class="splide__slide">
-          <a class="carousel-card" href="agents/models/">
-            <span class="card-icon">🌐</span>
-            <h3>Any Model, Any Runtime</h3>
-            <p>Any model, any runtime, any tools, any interface. Zero lock-in by design.</p>
-          </a>
-        </li>
-        <li class="splide__slide">
-          <a class="carousel-card" href="deploy/agent-engine/">
-            <span class="card-icon">💎</span>
-            <h3>Built for Gemini &amp; Google Cloud</h3>
-            <p>While model-agnostic, ADK is optimized for Gemini models and Google Cloud deployment with first-class integrations.</p>
+            <span class="card-icon">☁️</span>
+            <h3>Deploy Anywhere</h3>
+            <p>Agent Engine or your own infra. One-command deploy to Google Cloud, or run on any platform.</p>
+            <span class="card-learn-more">Learn more →</span>
           </a>
         </li>
       </ul>

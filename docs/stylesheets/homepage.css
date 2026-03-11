@@ -431,6 +431,16 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
 }
 .md-typeset .adk-landing .carousel-card p {
   font-size: 0.9rem; color: var(--landing-muted); line-height: 1.5; margin: 0;
+  flex: 1;
+}
+.md-typeset .adk-landing .carousel-card .card-learn-more {
+  display: block; margin-top: 16px;
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--landing-accent) !important;
+  opacity: 0.8; transition: opacity 0.2s;
+}
+.md-typeset .adk-landing .carousel-card:hover .card-learn-more {
+  opacity: 1;
 }
 
 /* ========================
