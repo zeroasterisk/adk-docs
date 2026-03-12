@@ -277,10 +277,16 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
           <div class="cc-row">user message</div>
           <div class="cc-row">tool results</div>
           <div class="cc-row">assistant</div>
-          <div class="cc-row cc-dim">user message 2</div>
-          <div class="cc-row cc-dim">tool results 2</div>
+          <div class="cc-row">user message 2</div>
+          <div class="cc-row">tool results 2</div>
+          <div class="cc-row cc-dim">user message 3</div>
+          <div class="cc-row cc-dim">assistant 2</div>
+          <div class="cc-row cc-dim">user message 4</div>
+          <div class="cc-row cc-dim">tool results 3</div>
+          <div class="cc-row cc-gone">assistant 3</div>
           <div class="cc-row cc-gone">memory</div>
           <div class="cc-row cc-gone">artifacts</div>
+          <div class="cc-row cc-gone">session state</div>
         </div>
         <div class="cc-meter">
           <div class="cc-meter-track"><div class="cc-meter-fill cc-meter-bad"></div></div>
