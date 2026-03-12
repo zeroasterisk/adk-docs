@@ -260,68 +260,49 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
   </div>
 </div>
 
-<!-- Context Compiler Visual -->
-<div class="context-compiler-section">
-  <h2>Context is compiled, not concatenated.</h2>
-  <p class="section-subtitle">Most frameworks paste strings into a context window until it overflows.<br>ADK compiles structured layers into an optimized view where every token earns its place.</p>
-
-  <div class="cc-visual">
-    <!-- LEFT: Typical Approach -->
-    <div class="cc-panel cc-left">
-      <div class="cc-label cc-label-bad">TYPICAL APPROACH</div>
-      <div class="cc-container cc-container-bad">
-        <div class="cc-block cc-sys" style="height:42px"><span>system prompt — 3.2k tokens</span></div>
-        <div class="cc-block cc-user" style="height:30px"><span>user message — 200</span></div>
-        <div class="cc-block cc-tool cc-tilted" style="height:36px"><span>tool results — 12.8k tokens</span></div>
-        <div class="cc-block cc-asst" style="height:26px"><span>assistant response — 1.4k</span></div>
-        <div class="cc-block cc-user cc-fade1" style="height:26px"><span>user message 2 — 180</span></div>
-        <div class="cc-block cc-tool cc-fade2" style="height:30px"><span>tool results 2 — 8.1k</span></div>
-        <div class="cc-block cc-mem cc-fade3" style="height:24px"><span>memory — 4.2k</span></div>
-        <div class="cc-block cc-art cc-fade4" style="height:20px"><span>artifacts</span></div>
-        <div class="cc-truncation-fade"></div>
-        <div class="cc-truncation-line">✂ TRUNCATED — context lost</div>
-      </div>
-      <div class="cc-token-bar cc-bar-bad">
-        <div class="cc-bar-track"><div class="cc-bar-fill cc-fill-bad" style="width:98%"></div></div>
-        <div class="cc-bar-label cc-bad-text">126k / 128k tokens</div>
-      </div>
-      <div class="cc-stat cc-bad-text">98% full</div>
-      <div class="cc-footnote">memory, artifacts, session state lost</div>
-    </div>
-
-    <!-- CENTER: Compiler -->
-    <div class="cc-compiler">
-      <div class="cc-diamond">
-        <div class="cc-diamond-inner">
-          <span class="cc-adk-mark">ADK</span>
-          <span class="cc-pass">deduplicate results</span>
-          <span class="cc-pass cc-pass-main">summarize history</span>
-          <span class="cc-pass">index artifacts</span>
-          <span class="cc-pass">budget tokens</span>
+<!-- Context Compiler -->
+<div class="feature-split reverse">
+  <div class="feature-text">
+    <span class="feature-badge">Context Engineering</span>
+    <h2>Context is compiled, not concatenated.</h2>
+    <p>Most frameworks paste strings into a context window until it overflows. ADK treats context as source code — sessions, memory, tools, and artifacts are <strong>compiled</strong> into an optimized view where every token earns its place.</p>
+    <p>Deduplicate tool results. Summarize old turns. Index artifacts. Budget tokens. All by default, all customizable.</p>
+  </div>
+  <div class="feature-visual">
+    <div class="cc-compare">
+      <div class="cc-side">
+        <div class="cc-side-label cc-label-dim">Others</div>
+        <div class="cc-stack cc-stack-bad">
+          <div class="cc-row">system prompt</div>
+          <div class="cc-row">user message</div>
+          <div class="cc-row">tool results</div>
+          <div class="cc-row">assistant</div>
+          <div class="cc-row cc-dim">user message 2</div>
+          <div class="cc-row cc-dim">tool results 2</div>
+          <div class="cc-row cc-gone">memory</div>
+          <div class="cc-row cc-gone">artifacts</div>
+        </div>
+        <div class="cc-meter">
+          <div class="cc-meter-track"><div class="cc-meter-fill cc-meter-bad"></div></div>
+          <span class="cc-meter-text cc-text-bad">98% full</span>
         </div>
       </div>
-      <div class="cc-compiler-label">CONTEXT COMPILER</div>
-      <div class="cc-compiler-sub">good defaults · fully customizable</div>
-    </div>
-
-    <!-- RIGHT: ADK Compiled View -->
-    <div class="cc-panel cc-right">
-      <div class="cc-label cc-label-good">ADK COMPILED VIEW</div>
-      <div class="cc-container cc-container-good">
-        <div class="cc-block cc-sys" style="height:38px"><span>system prompt — 3.2k</span></div>
-        <div class="cc-block cc-mem" style="height:24px"><span>relevant memory — 800</span></div>
-        <div class="cc-block cc-summary" style="height:22px"><span><em>14 turns → 800 token summary</em></span></div>
-        <div class="cc-block cc-tool" style="height:32px"><span>tool results (deduped) — 6.4k</span></div>
-        <div class="cc-block cc-user cc-prominent" style="height:36px"><span>user message — 200</span></div>
-        <div class="cc-block cc-art" style="height:20px"><span>artifact refs — 120</span></div>
-        <div class="cc-spacer"></div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-side">
+        <div class="cc-side-label cc-label-bright">ADK</div>
+        <div class="cc-stack cc-stack-good">
+          <div class="cc-row">system prompt</div>
+          <div class="cc-row cc-compact">memory (relevant)</div>
+          <div class="cc-row cc-compact cc-italic">14 turns → summary</div>
+          <div class="cc-row">tools (deduped)</div>
+          <div class="cc-row">user message</div>
+          <div class="cc-row cc-compact">artifact refs</div>
+        </div>
+        <div class="cc-meter">
+          <div class="cc-meter-track"><div class="cc-meter-fill cc-meter-good"></div></div>
+          <span class="cc-meter-text cc-text-good">9% used</span>
+        </div>
       </div>
-      <div class="cc-token-bar cc-bar-good">
-        <div class="cc-bar-track"><div class="cc-bar-fill cc-fill-good" style="width:9%"></div></div>
-        <div class="cc-bar-label cc-good-text">11.5k / 128k tokens</div>
-      </div>
-      <div class="cc-stat cc-good-text">9% used</div>
-      <div class="cc-footnote">nothing lost · 89% fewer tokens</div>
     </div>
   </div>
 </div>
