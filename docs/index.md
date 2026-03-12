@@ -182,6 +182,59 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
   </div>
 </div>
 
+<!-- Context Compiler -->
+<div class="feature-split reverse">
+  <div class="feature-text">
+    <span class="feature-badge">Context Engineering</span>
+    <h2>Context is compiled, not concatenated.</h2>
+    <p>Most frameworks paste strings into a context window until it overflows. ADK treats context as source code — sessions, memory, tools, and artifacts are <strong>compiled</strong> into an optimized view where every token earns its place.</p>
+    <p>Deduplicate tool results. Summarize old turns. Index artifacts. Budget tokens. All by default, all customizable.</p>
+  </div>
+  <div class="feature-visual">
+    <div class="cc-compare">
+      <div class="cc-side">
+        <div class="cc-side-label cc-label-dim">Others</div>
+        <div class="cc-stack cc-stack-bad">
+          <div class="cc-row">system prompt</div>
+          <div class="cc-row">user message</div>
+          <div class="cc-row">tool results</div>
+          <div class="cc-row">assistant</div>
+          <div class="cc-row">user message 2</div>
+          <div class="cc-row">tool results 2</div>
+          <div class="cc-row cc-dim">user message 3</div>
+          <div class="cc-row cc-dim">assistant 2</div>
+          <div class="cc-row cc-dim">user message 4</div>
+          <div class="cc-row cc-dim">tool results 3</div>
+          <div class="cc-row cc-gone">assistant 3</div>
+          <div class="cc-row cc-gone">memory</div>
+          <div class="cc-row cc-gone">artifacts</div>
+          <div class="cc-row cc-gone">session state</div>
+        </div>
+        <div class="cc-meter">
+          <div class="cc-meter-track"><div class="cc-meter-fill cc-meter-bad"></div></div>
+          <span class="cc-meter-text cc-text-bad">98% full</span>
+        </div>
+      </div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-side">
+        <div class="cc-side-label cc-label-bright">ADK</div>
+        <div class="cc-stack cc-stack-good">
+          <div class="cc-row">system prompt</div>
+          <div class="cc-row cc-compact">memory (relevant)</div>
+          <div class="cc-row cc-compact cc-italic">14 turns → summary</div>
+          <div class="cc-row">tools (deduped)</div>
+          <div class="cc-row">user message</div>
+          <div class="cc-row cc-compact">artifact refs</div>
+        </div>
+        <div class="cc-meter">
+          <div class="cc-meter-track"><div class="cc-meter-fill cc-meter-good"></div></div>
+          <span class="cc-meter-text cc-text-good">9% used</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Dev UI Section -->
 <div class="feature-split reverse">
   <div class="feature-text">
@@ -255,59 +308,6 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
             <tr class="metric-red"><td>Hallucination rate</td><td>4.1%</td><td>6.1%</td><td class="delta-red">+2%</td></tr>
           </tbody>
         </table>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Context Compiler -->
-<div class="feature-split reverse">
-  <div class="feature-text">
-    <span class="feature-badge">Context Engineering</span>
-    <h2>Context is compiled, not concatenated.</h2>
-    <p>Most frameworks paste strings into a context window until it overflows. ADK treats context as source code — sessions, memory, tools, and artifacts are <strong>compiled</strong> into an optimized view where every token earns its place.</p>
-    <p>Deduplicate tool results. Summarize old turns. Index artifacts. Budget tokens. All by default, all customizable.</p>
-  </div>
-  <div class="feature-visual">
-    <div class="cc-compare">
-      <div class="cc-side">
-        <div class="cc-side-label cc-label-dim">Others</div>
-        <div class="cc-stack cc-stack-bad">
-          <div class="cc-row">system prompt</div>
-          <div class="cc-row">user message</div>
-          <div class="cc-row">tool results</div>
-          <div class="cc-row">assistant</div>
-          <div class="cc-row">user message 2</div>
-          <div class="cc-row">tool results 2</div>
-          <div class="cc-row cc-dim">user message 3</div>
-          <div class="cc-row cc-dim">assistant 2</div>
-          <div class="cc-row cc-dim">user message 4</div>
-          <div class="cc-row cc-dim">tool results 3</div>
-          <div class="cc-row cc-gone">assistant 3</div>
-          <div class="cc-row cc-gone">memory</div>
-          <div class="cc-row cc-gone">artifacts</div>
-          <div class="cc-row cc-gone">session state</div>
-        </div>
-        <div class="cc-meter">
-          <div class="cc-meter-track"><div class="cc-meter-fill cc-meter-bad"></div></div>
-          <span class="cc-meter-text cc-text-bad">98% full</span>
-        </div>
-      </div>
-      <div class="cc-arrow">→</div>
-      <div class="cc-side">
-        <div class="cc-side-label cc-label-bright">ADK</div>
-        <div class="cc-stack cc-stack-good">
-          <div class="cc-row">system prompt</div>
-          <div class="cc-row cc-compact">memory (relevant)</div>
-          <div class="cc-row cc-compact cc-italic">14 turns → summary</div>
-          <div class="cc-row">tools (deduped)</div>
-          <div class="cc-row">user message</div>
-          <div class="cc-row cc-compact">artifact refs</div>
-        </div>
-        <div class="cc-meter">
-          <div class="cc-meter-track"><div class="cc-meter-fill cc-meter-good"></div></div>
-          <span class="cc-meter-text cc-text-good">9% used</span>
-        </div>
       </div>
     </div>
   </div>
