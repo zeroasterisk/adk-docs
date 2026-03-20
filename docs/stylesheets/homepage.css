@@ -122,6 +122,15 @@ html[data-md-color-scheme="slate"] .adk-landing .hero-content h1 {
 .md-typeset .adk-landing .btn-secondary:hover {
   background: var(--md-code-bg-color); border-color: var(--landing-muted); transform: translateY(-1px);
 }
+.md-typeset .adk-landing .btn-accent {
+  background: rgba(99, 102, 241, 0.1); color: var(--landing-fg) !important;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+.md-typeset .adk-landing .btn-accent:hover {
+  background: rgba(99, 102, 241, 0.18); border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.2); transform: translateY(-1px);
+}
 
 /* --- GitHub link button (inside tab area) --- */
 .md-typeset .adk-landing .github-link {
