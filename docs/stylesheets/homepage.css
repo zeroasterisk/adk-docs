@@ -626,6 +626,28 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
 .md-typeset .adk-landing .cc-text-good { color: #4ade80; }
 
 /* ========================
+   ANNOUNCEMENT BANNER
+   Uses Material's own --md-* vars for theme compatibility.
+   ======================== */
+.md-banner {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-size: 0.8rem;
+}
+.md-banner .announce-items {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; flex-wrap: wrap;
+}
+.md-banner .announce-items a {
+  color: var(--md-primary-bg-color); text-decoration: none;
+  font-weight: 500; white-space: nowrap;
+}
+.md-banner .announce-items a:hover { text-decoration: underline; }
+.md-banner .announce-sep {
+  opacity: 0.5; font-weight: 300; user-select: none;
+}
+
+/* ========================
    FAQ SECTION
    ======================== */
 .md-typeset .adk-landing .faq-section {
