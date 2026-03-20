@@ -177,6 +177,7 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
     <h2>Build agents <i>with</i> agents.</h2>
     <p>ADK is designed to be written by both humans and AI. Hook up your favorite coding assistant to our MCP Server and let it generate robust, tool-bound agents in seconds.</p>
     <p>Define your skills, bind your tools, and let your IDE do the heavy lifting.</p>
+    <a href="skills/" class="btn btn-accent" style="margin-top:12px">Agents CLI</a>
   </div>
   <div class="feature-visual">
     <div id="asciinema-demo"></div>
