@@ -58,7 +58,8 @@ hide:
     <h1>SOTA Production AI Agents, <span class="hero-dim">not Prototypes.</span></h1>
     <p>Start in seconds, stay in control while you hill climb, and scale up to enterprise-level deployments. Batteries included, any model, any tools, any deployment, opinionated but fully customizable, P0 Google code and <strong>fully open source</strong>.</p>
     <div class="hero-actions">
-      <a href="get-started/quickstart/" class="btn btn-primary">Get Started</a>
+      <a href="get-started/quickstart/" class="btn btn-primary">Human builders</a>
+      <a href="skills/" class="btn btn-secondary">Agent skills</a>
     </div>
   </div>
   <div class="hero-visual">
