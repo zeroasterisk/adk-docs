@@ -383,7 +383,7 @@ html[data-md-color-scheme="slate"] .adk-landing .feature-badge {
 
 /* Splide carousel overrides */
 .md-typeset .adk-landing .splide {
-  padding: 8px 0 24px;
+  padding: 8px 0 48px;
 }
 .md-typeset .adk-landing .splide__slide {
   opacity: 0.5; transform: scale(0.9);
