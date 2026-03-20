@@ -624,3 +624,53 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
 }
 .md-typeset .adk-landing .cc-text-bad { color: #f87171; }
 .md-typeset .adk-landing .cc-text-good { color: #4ade80; }
+
+/* ========================
+   FAQ SECTION
+   ======================== */
+.md-typeset .adk-landing .faq-section {
+  padding: clamp(48px, 8vw, 80px) clamp(16px, 4vw, 40px);
+  max-width: 900px; margin: 0 auto; text-align: center;
+}
+.md-typeset .adk-landing .faq-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800;
+  color: var(--landing-fg); margin: 0 0 8px; letter-spacing: -0.02em;
+}
+.md-typeset .adk-landing .faq-section .section-subtitle {
+  color: var(--landing-fg-muted); font-size: 0.95rem; margin: 0 0 32px;
+}
+.md-typeset .adk-landing .faq-grid {
+  text-align: left; display: flex; flex-direction: column; gap: 0;
+}
+.md-typeset .adk-landing .faq-item {
+  border-bottom: 1px solid var(--landing-border); padding: 0;
+}
+.md-typeset .adk-landing .faq-item:first-child {
+  border-top: 1px solid var(--landing-border);
+}
+.md-typeset .adk-landing .faq-item summary {
+  padding: 16px 4px; cursor: pointer; font-weight: 600;
+  font-size: 0.95rem; color: var(--landing-fg);
+  list-style: none; display: flex; align-items: center;
+  justify-content: space-between; gap: 12px;
+  transition: color 0.15s;
+}
+.md-typeset .adk-landing .faq-item summary::-webkit-details-marker { display: none; }
+.md-typeset .adk-landing .faq-item summary::after {
+  content: "+"; font-size: 1.2rem; font-weight: 300;
+  color: var(--landing-fg-muted); transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.md-typeset .adk-landing .faq-item[open] summary::after {
+  content: "−";
+}
+.md-typeset .adk-landing .faq-item summary:hover { color: var(--landing-accent, #818cf8); }
+.md-typeset .adk-landing .faq-item p {
+  padding: 0 4px 16px; margin: 0;
+  font-size: 0.88rem; line-height: 1.7;
+  color: var(--landing-fg-muted);
+}
+.md-typeset .adk-landing .faq-item code {
+  background: var(--md-code-bg-color); padding: 2px 6px;
+  border-radius: 3px; font-size: 0.82rem;
+}
