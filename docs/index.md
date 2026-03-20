@@ -3,8 +3,6 @@ hide:
   - toc
   - navigation
 ---
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.9.0/dist/bundle/asciinema-player.css" />
 <script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.9.0/dist/bundle/asciinema-player.min.js"></script>
 
@@ -55,8 +53,8 @@ hide:
 <!-- Hero Section -->
 <div class="hero-grid">
   <div class="hero-content">
-    <h1>SOTA Production AI Agents, <span class="hero-dim">not Prototypes.</span></h1>
-    <p>Start in seconds, stay in control while you hill climb, and scale up to enterprise-level deployments. Batteries included, any model, any tools, any deployment, opinionated but fully customizable, P0 Google code and <strong>fully open source</strong>.</p>
+    <h1>SOTA Production AI Agents,<br><span class="hero-punchline">not Prototypes.</span></h1>
+    <p>Mission critical Google code and <strong>fully open source</strong>.<br>Any model, tools, and deploy anywhere.</p>
     <div class="hero-actions">
       <a href="get-started/quickstart/" class="btn btn-primary">Human builders</a>
       <a href="skills/" class="btn btn-accent">Agent skills</a>
@@ -118,10 +116,6 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
           <a href="https://github.com/google/adk-python" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-python?style=flat&label=stars" alt="GitHub stars"></a>
           <a href="https://pypi.org/project/google-adk/" target="_blank"><img src="https://img.shields.io/pypi/dm/google-adk?label=downloads" alt="PyPI downloads"></a>
         </div>
-        <a href="https://github.com/google/adk-python" class="github-link" target="_blank">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          adk-python
-        </a>
       </div>
       <div class="install-info" id="install-go" style="display:none">
         <div class="install-cmd">
@@ -132,10 +126,6 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
           <a href="https://pkg.go.dev/google.golang.org/adk" target="_blank"><img src="https://pkg.go.dev/badge/google.golang.org/adk.svg" alt="Go Reference"></a>
           <a href="https://github.com/google/adk-go" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-go?style=flat&label=stars" alt="GitHub stars"></a>
         </div>
-        <a href="https://github.com/google/adk-go" class="github-link" target="_blank">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          adk-go
-        </a>
       </div>
       <div class="install-info" id="install-java" style="display:none">
         <div class="install-cmd">
@@ -146,10 +136,6 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
           <a href="https://search.maven.org/artifact/com.google.adk/google-adk" target="_blank"><img src="https://img.shields.io/maven-central/v/com.google.adk/google-adk?label=version" alt="Maven Central version"></a>
           <a href="https://github.com/google/adk-java" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-java?style=flat&label=stars" alt="GitHub stars"></a>
         </div>
-        <a href="https://github.com/google/adk-java" class="github-link" target="_blank">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          adk-java
-        </a>
       </div>
       <div class="install-info" id="install-typescript" style="display:none">
         <div class="install-cmd">
@@ -161,10 +147,6 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
           <a href="https://github.com/google/adk-typescript" target="_blank"><img src="https://img.shields.io/github/stars/google/adk-typescript?style=flat&label=stars" alt="GitHub stars"></a>
           <a href="https://www.npmjs.com/package/@google/adk" target="_blank"><img src="https://img.shields.io/npm/dm/@google/adk?label=downloads" alt="npm downloads"></a>
         </div>
-        <a href="https://github.com/google/adk-js" class="github-link" target="_blank">
-          <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          adk-js
-        </a>
       </div>
     </div>
   </div>
@@ -319,107 +301,104 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
 <div class="ceiling-section">
   <h2>Low floor, high ceiling</h2>
   <p class="section-subtitle">Start simple. Scale to production. ADK grows with you.</p>
-  <div id="features-carousel" class="splide" aria-label="Key features">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">
+  <div class="features-grid">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="get-started/quickstart/">
             <span class="card-icon">🚀</span>
             <h3>5-Minute Agent</h3>
             <p>Zero to agent in 5 minutes. Define behavior in YAML or Python — no boilerplate required.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="context/">
             <span class="card-icon">🧠</span>
             <h3>Structured Context</h3>
             <p>Context engineering, not prompt engineering. Sessions, memory, and artifacts compiled into optimized model views.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="streaming/">
             <span class="card-icon">🎙️</span>
             <h3>Multimodal Streaming</h3>
             <p>Voice, video, and real-time streaming. Build agents that see, hear, and respond in real time with the Live API.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="tools/mcp-tools/">
             <span class="card-icon">🔌</span>
             <h3>MCP Native</h3>
             <p>Connect 1000s of tools with zero config. Native Model Context Protocol support for extensible tool access.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="https://google.github.io/A2A/">
             <span class="card-icon">🤝</span>
             <h3>A2A Protocol</h3>
             <p>Agents talking to agents. Cross-platform interoperability with the open Agent-to-Agent protocol.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="https://a2ui.org/">
             <span class="card-icon">🖼️</span>
             <h3>Agent-to-UI</h3>
             <p>Agents that render, not just respond. Stream dynamic, generative UIs as structured payloads.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="safety/">
             <span class="card-icon">🛡️</span>
             <h3>Built-in Guardrails</h3>
             <p>Safety by default. Input/output guardrails, content filtering, and callback-based safety checks.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="evaluate/">
             <span class="card-icon">📊</span>
             <h3>Evaluation Framework</h3>
             <p>Go beyond vibes. Test response quality, tool accuracy, and full execution trajectories systematically.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="observability/">
             <span class="card-icon">🔍</span>
             <h3>Native Observability</h3>
             <p>Full visibility into every agent decision. OpenTelemetry tracing, tool call inspection, and reasoning logs.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="sessions/">
             <span class="card-icon">🔄</span>
             <h3>Session Rewind</h3>
             <p>Time-travel debugging for agents. Replay and inspect any point in a conversation's history.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="agents/workflow-agents/">
             <span class="card-icon">📐</span>
             <h3>Workflow Graphs</h3>
             <p>Deterministic when you need it. Graph-based agents combine AI flexibility with reliable control flow.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-        <li class="splide__slide">
+
+<!-- FEATURED: uncomment/comment cards to control which appear -->
           <a class="carousel-card" href="deploy/">
             <span class="card-icon">☁️</span>
             <h3>Deploy Anywhere</h3>
             <p>Agent Engine or your own infra. One-command deploy to Google Cloud, or run on any platform.</p>
             <span class="card-learn-more">Learn more →</span>
           </a>
-        </li>
-      </ul>
-    </div>
+
   </div>
 </div>
 
@@ -457,6 +436,9 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
     <p>ADK supports multiple entry points. Use <code>agent-starter-pack</code> for template-based scaffolding, Gemini CLI for natural language agent creation, or the ADK Web UI for visual testing and debugging. For production agents, you'll want code — but you can start without it and add structure as you go.</p>
   </details>
 
+  <details class="faq-view-all">
+    <summary>View all questions</summary>
+
   <details class="faq-item">
     <summary>How does ADK integrate with Google Cloud and Vertex AI?</summary>
     <p>ADK deploys natively to Google Cloud via Agent Engine (Vertex AI), Cloud Run, or GKE. You get managed infrastructure, built-in authentication, Vertex AI model access, Cloud Trace observability, and enterprise security — all without changing your agent code. Develop locally, deploy to Google Cloud with one command.</p>
@@ -482,6 +464,8 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
     <p>Fully open source under the Apache 2.0 license. Available in Python, Go, Java, and TypeScript. The same code that runs Google's internal agent infrastructure is what you get. No proprietary lock-in, no "enterprise edition" — everything is in the open.</p>
   </details>
 
+  </details>
+
   </div>
 </div>
 
@@ -502,25 +486,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
   });
-
-  // Splide carousel
-  if (typeof Splide !== 'undefined') {
-    new Splide('#features-carousel', {
-      type: 'loop',
-      perPage: 3,
-      perMove: 1,
-      focus: 'center',
-      gap: '1.25rem',
-      padding: '2rem',
-      autoplay: false,
-      pagination: true,
-      arrows: true,
-      breakpoints: {
-        1024: { perPage: 2, padding: '1rem' },
-        640: { perPage: 1, padding: '2rem' }
-      }
-    }).mount();
-  }
 
   // Copy-to-clipboard buttons
   document.addEventListener('click', function(e) {
