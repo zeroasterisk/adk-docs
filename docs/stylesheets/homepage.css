@@ -159,13 +159,13 @@ html[data-md-color-scheme="slate"] .adk-landing .hero-content h1 {
    MAC-STYLE CODE WINDOW
    ======================== */
 .md-typeset .adk-landing .mac-window {
-  background: #0f172a;
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--landing-surface);
+  border: 1px solid var(--landing-border);
   border-radius: 12px; overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 html[data-md-color-scheme="slate"] .adk-landing .mac-window {
-  box-shadow: 0 24px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 .md-typeset .adk-landing .window-header {
   background: var(--md-code-bg-color);
@@ -184,14 +184,14 @@ html[data-md-color-scheme="slate"] .adk-landing .mac-window {
 
 /* --- iTerm-style tabs --- */
 .md-typeset .adk-landing .iterm-tab-bar {
-  display: flex; background: #0a0f1e; padding: 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px 12px 0 0; overflow: hidden;
+  display: flex; background: var(--landing-surface); padding: 0;
+  border-bottom: 1px solid var(--landing-border);
+  overflow: hidden;
 }
 .md-typeset .adk-landing .iterm-tab {
   padding: 10px 20px; font-family: var(--font-mono); font-size: 0.82rem;
-  color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.15s;
-  border-right: 1px solid rgba(255,255,255,0.07);
+  color: var(--landing-fg-muted); cursor: pointer; transition: all 0.15s;
+  border-right: 1px solid var(--landing-border);
   display: flex; align-items: center; gap: 8px; user-select: none;
   position: relative;
 }
@@ -201,11 +201,11 @@ html[data-md-color-scheme="slate"] .adk-landing .mac-window {
   opacity: 0.8;
 }
 .md-typeset .adk-landing .iterm-tab.active .lang-icon { opacity: 1; }
-.md-typeset .adk-landing .iterm-tab:hover { color: rgba(255,255,255,0.85); }
+.md-typeset .adk-landing .iterm-tab:hover { color: var(--landing-fg); }
 .md-typeset .adk-landing .iterm-tab.active {
-  color: #fff;
+  color: var(--landing-fg);
   border-bottom: 2px solid var(--landing-accent);
-  background: rgba(255,255,255,0.05);
+  background: var(--md-code-bg-color);
 }
 
 /* --- Code content --- */
@@ -229,15 +229,14 @@ html[data-md-color-scheme="default"] .adk-landing .fn { color: #4078f2; }
 .md-typeset .adk-landing .install-info {
   display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
   padding: 12px 20px;
-  background: #0a0f1e; border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 0 0 12px 12px; margin-top: -1px;
+  background: var(--landing-surface); border-top: 1px solid var(--landing-border);
 }
 .md-typeset .adk-landing .install-cmd {
   display: flex; align-items: center; gap: 8px; width: 100%;
 }
 .md-typeset .adk-landing .install-cmd code {
-  background: rgba(255,255,255,0.07); padding: 6px 12px; border-radius: 6px;
-  font-family: var(--font-mono); font-size: 0.85rem; color: #e2e8f0;
+  background: var(--md-code-bg-color); padding: 6px 12px; border-radius: 6px;
+  font-family: var(--font-mono); font-size: 0.85rem; color: var(--landing-fg);
   border: 1px solid rgba(255,255,255,0.1);
 }
 .md-typeset .adk-landing .copy-btn {
@@ -519,7 +518,7 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
 .md-typeset .adk-landing .hero-grid { display: grid !important; grid-template-columns: 1fr 1.1fr !important; }
 .md-typeset .adk-landing .hero-visual { display: block !important; min-height: 300px !important; }
 .md-typeset .adk-landing .tabbed-area { display: block !important; }
-.md-typeset .adk-landing .mac-window { display: block !important; background: #0f172a !important; border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 12px !important; overflow: hidden !important; }
+.md-typeset .adk-landing .mac-window { display: block !important; background: var(--landing-surface) !important; border: 1px solid var(--landing-border) !important; border-radius: 12px !important; overflow: hidden !important; }
 .md-typeset .adk-landing .iterm-tab-bar { display: flex !important; }
 .md-typeset .adk-landing .iterm-tab { display: flex !important; }
 .md-typeset .adk-landing .code-content { padding: 24px !important; text-align: left !important; }
