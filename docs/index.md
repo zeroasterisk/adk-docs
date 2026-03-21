@@ -436,35 +436,34 @@ a := agent.<span class="fn">New</span>(<span class="str">"researcher"</span>,
     <p>ADK supports multiple entry points. Use <code>agent-starter-pack</code> for template-based scaffolding, Gemini CLI for natural language agent creation, or the ADK Web UI for visual testing and debugging. For production agents, you'll want code — but you can start without it and add structure as you go.</p>
   </details>
 
-  <details class="faq-view-all">
-    <summary>View all questions</summary>
+  <input type="checkbox" id="faq-toggle" class="faq-toggle-input">
 
-  <details class="faq-item">
+  <details class="faq-item faq-extra">
     <summary>How does ADK integrate with Google Cloud and Vertex AI?</summary>
     <p>ADK deploys natively to Google Cloud via Agent Engine (Vertex AI), Cloud Run, or GKE. You get managed infrastructure, built-in authentication, Vertex AI model access, Cloud Trace observability, and enterprise security — all without changing your agent code. Develop locally, deploy to Google Cloud with one command.</p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item faq-extra">
     <summary>Is ADK locked to Gemini models?</summary>
     <p>No. ADK works with any model — Gemini, Claude, GPT, Llama, Mistral, or any OpenAI-compatible endpoint. It's optimized for Gemini (native tool calling, grounding, multimodal) but designed to be model-agnostic. Swap models with a single line change.</p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item faq-extra">
     <summary>What's the difference between ADK and LangChain / CrewAI / AutoGen?</summary>
     <p>ADK is built for production, not just prototyping. Key differences: structured context compilation (not string concatenation), built-in evaluation framework, visual debugging UI, native multi-agent orchestration, and a direct path to enterprise deployment on Google Cloud. It's also fully open source with P0 Google engineering quality.</p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item faq-extra">
     <summary>Can I use ADK as an agent platform for my team?</summary>
     <p>Yes. ADK scales from single-developer projects to team-wide agent platforms. Deploy agents as services with A2A (Agent-to-Agent) protocol support, manage sessions and state across users, add authentication and authorization, and monitor everything with built-in observability. Agent Engine on Vertex AI provides the managed infrastructure.</p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item faq-extra">
     <summary>Is ADK open source?</summary>
     <p>Fully open source under the Apache 2.0 license. Available in Python, Go, Java, and TypeScript. The same code that runs Google's internal agent infrastructure is what you get. No proprietary lock-in, no "enterprise edition" — everything is in the open.</p>
   </details>
 
-  </details>
+  <label for="faq-toggle" class="faq-show-more"></label>
 
   </div>
 </div>

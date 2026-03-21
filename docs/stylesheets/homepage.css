@@ -694,30 +694,29 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
 }
 
 /* FAQ view-all unfurl */
-.md-typeset .adk-landing .faq-view-all {
-  border: none !important;
-  padding: 0 !important;
-  margin-top: 8px;
+/* FAQ show-more: CSS checkbox toggle (no JS, no nesting) */
+.md-typeset .adk-landing .faq-toggle-input {
+  display: none;
 }
-.md-typeset .adk-landing .faq-view-all > summary {
-  padding: 12px 4px; cursor: pointer;
-  font-size: 0.875rem; font-weight: 500;
+.md-typeset .adk-landing .faq-extra {
+  display: none;
+}
+.md-typeset .adk-landing .faq-toggle-input:checked ~ .faq-extra {
+  display: block;
+}
+.md-typeset .adk-landing .faq-show-more {
+  display: block; padding: 16px 4px; cursor: pointer;
+  font-size: 0.85rem; font-weight: 500;
   color: var(--landing-accent, #818cf8);
-  list-style: none; display: flex; align-items: center; gap: 6px;
   border-top: 1px solid var(--landing-border);
-  transition: opacity 0.2s;
-  justify-content: flex-start;
+  text-align: center; user-select: none;
 }
-.md-typeset .adk-landing .faq-view-all > summary::-webkit-details-marker { display: none; }
-.md-typeset .adk-landing .faq-view-all > summary::before {
-  content: "⌄"; font-size: 1rem; transition: transform 0.2s;
+.md-typeset .adk-landing .faq-show-more::after {
+  content: "Show more questions ↓";
 }
-.md-typeset .adk-landing .faq-view-all[open] > summary::before {
-  transform: rotate(180deg);
+.md-typeset .adk-landing .faq-toggle-input:checked ~ .faq-show-more::after {
+  content: "Show fewer questions ↑";
 }
-.md-typeset .adk-landing .faq-view-all[open] > summary {
-  opacity: 0.4;
-}
-.md-typeset .adk-landing .faq-view-all > summary::after {
-  display: none !important;
+.md-typeset .adk-landing .faq-show-more:hover {
+  color: var(--landing-fg);
 }
