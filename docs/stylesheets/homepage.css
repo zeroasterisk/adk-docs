@@ -567,8 +567,8 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
 .md-typeset .adk-landing .cc-label-bright { color: #4ade80; }
 
 .md-typeset .adk-landing .cc-stack {
-  border-radius: 8px; padding: 6px; display: flex;
-  flex-direction: column; gap: 3px; flex: 1;
+  border-radius: 8px; padding: 4px; display: flex;
+  flex-direction: column; gap: 2px; flex: 1;
 }
 .md-typeset .adk-landing .cc-stack-bad {
   border: 1px dashed var(--landing-border);
@@ -579,11 +579,11 @@ html[data-md-color-scheme="slate"] .adk-landing .carousel-card:hover {
   background: var(--landing-surface);
 }
 .md-typeset .adk-landing .cc-row {
-  padding: 6px 10px; border-radius: 4px; font-size: 0.75rem;
+  padding: 4px 8px; border-radius: 3px; font-size: 0.65rem;
   font-family: var(--font-mono); color: var(--landing-fg);
   background: var(--md-code-bg-color);
 }
-.md-typeset .adk-landing .cc-compact { font-size: 0.68rem; padding: 4px 10px; color: var(--landing-fg-muted); }
+.md-typeset .adk-landing .cc-compact { font-size: 0.6rem; padding: 3px 8px; color: var(--landing-fg-muted); }
 .md-typeset .adk-landing .cc-italic { font-style: italic; }
 .md-typeset .adk-landing .cc-dim { opacity: 0.4; }
 .md-typeset .adk-landing .cc-gone {
